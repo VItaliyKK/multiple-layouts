@@ -22,3 +22,53 @@
     .router__link.logout
         justify-self: center
         align-self: center    
+    .open__close__routing__block
+        display: none
+        align-self: center
+        justify-self: center
+        cursor: pointer
+
+
+//
+// ** media queries **
+//
+@media screen and (max-width: 1040px)
+    .sidebar
+        position: sticky
+        top: 0
+        z-index: 999
+        grid-template-rows: none
+        grid-template-columns: 1fr 4fr 1fr
+        .logo
+            position: relative
+            top: 5px
+        .routing
+            display: flex
+            align-items: center
+            width: 100%
+            .router__link
+                margin-top: 0
+                margin-right: 50px
+        .open__close__routing__block
+            display: none        
+
+@media screen and ( max-width:  768px)
+    .sidebar 
+        #open__close:checked ~ .routing
+            display: block
+            position: absolute
+            top: 60px
+            background-color: $drk-col
+            padding: 20px
+            border-bottom-right-radius: $brd-rads
+            border-bottom-left-radius: $brd-rads
+            .router__link
+                margin-top: 20px
+                margin-right: 0
+                border-top: 1px dashed $mddl-col
+                padding-top: 15px;
+                text-align: center
+        .routing
+            display: none 
+        .open__close__routing__block
+            display: block  

@@ -3,8 +3,8 @@ const autoprefixer = require('gulp-autoprefixer');//для кросбраузе�
 const sass = require('gulp-sass');
 sass.compiler = require('node-sass');
 const cssnano = require('gulp-cssnano');//для мініфікації css файлів
-// const rename = require("gulp-rename");//для зміни назви файлів
-// const uglify = require('gulp-uglify-es').default;//для мініфікації js файлів
+const rename = require("gulp-rename");//для зміни назви файлів
+const uglify = require('gulp-uglify-es').default;//для мініфікації js файлів
 const browserSync = require('browser-sync').create();//для запуску сервера з власним портом
 const concat = require('gulp-concat');//для конкатикації файлів
 const del = require('del');//для видалення файлів
@@ -60,13 +60,13 @@ function styles(done){
 };
 
 // processing js files
-// function scripts(){
-//     return gulp.src(paths.scripts.src)
-//         .pipe(concat('main.min.js'))
-//         .pipe(uglify())
-//         .pipe(gulp.dest(paths.scripts.dest))
-//         .pipe(browserSync.stream())
-// };
+function scripts(){
+    return gulp.src(paths.scripts.src)
+        .pipe(rename({ suffix: '.min' }))
+        .pipe(uglify())
+        .pipe(gulp.dest(paths.scripts.dest))
+        .pipe(browserSync.stream())
+};
 
 // bilding html
 function html(){
@@ -80,7 +80,7 @@ function watch(){
     gulp.watch(paths.images.src, images);
     gulp.watch('./src/**/*.sass', styles);
     gulp.watch(paths.fonts.src, fonts);
-    // gulp.watch(paths.scripts.src, scripts);
+    gulp.watch(paths.scripts.src, scripts);
     gulp.watch(paths.html.src, html);
     gulp.watch('./src/*.html', gulp.series(browserReload));
 };
@@ -90,6 +90,6 @@ function clear(){
     return del(['docs']);
 }
 
-const build = gulp.series(clear, gulp.parallel(images, fonts, styles, html));
+const build = gulp.series(clear, gulp.parallel(images, fonts, styles, scripts, html));
 gulp.task('build', build);
 gulp.task('default', gulp.parallel(watch, gulp.series(build, browser) ));

@@ -4,7 +4,6 @@
     
 .side__content
     display: grid
-    grid-template-rows: 160px 2fr 1fr
     grid-row-gap: 24px
     overflow-y: auto
     .side__content__header
@@ -93,3 +92,29 @@
                 font-weight: bold
             p
                 font-family: $sub-font
+
+
+
+
+
+//
+// ** media queries **
+//                
+@media screen and (max-width:  386px)
+    .side__content .side__content__header
+        grid-template-rows: repeat(2,35px) repeat(2,85px)
+        grid-template-areas: "sr sr" "notf prf" "cmp cmp" "prg prg"
+        .side__content__header__profile
+            justify-self: center
+
+
+@media screen and (max-width:  330px)            
+    .main__content .main__content__courses .main__content__courses__list .main__content__course
+        grid-template-rows: 80px 70px 50px
+        grid-template-columns: repeat(2,1fr)
+        .main__content__course__info
+            grid-column-start: auto
+            grid-column-end: auto
+        button
+            grid-column-start: 1
+            grid-column-end: 3

@@ -139,8 +139,49 @@
                     left: -3px
             button
                 padding: 3px 12px
-                border-radius: 4px
+                border-radius: 12px
                 color: $drk-col
                 border: 2px solid $drk-col
                 font-family: $main-font
                 font-weight: bold
+
+
+
+//
+// ** media queries **
+//
+@media screen and ( max-width:  528px)
+    .main__content
+        grid-template-rows: 160px 140px auto
+        .main__content__box
+            grid-template-rows: 70px 70px
+            grid-template-columns: none
+            grid-template-areas: "lang lang" "prev next"
+            .main__content__box__lang 
+                grid-area: lang
+            .main__content__box_prev
+                grid-area: prev
+            .main__content__box_next
+                grid-area: next
+        .main__content__courses .main__content__courses__list .main__content__course      
+            grid-template-rows: 80px 70px
+            grid-template-columns: repeat(3, 1fr)
+            height: auto
+            .main__content__course__info
+                grid-column-start: 2
+                grid-column-end: 4
+        .main__content__header__wrapper .main__content__header__man
+            right: -30px        
+
+
+@media screen and ( max-width:  386px)
+    .main__content
+        grid-template-rows: 160px 210px auto
+        .main__content__box
+            grid-template-rows: 140px 70px
+            grid-column-gap: 0
+            .main__content__box__lang
+                grid-template-columns: 1fr 1fr
+                grid-template-rows: repeat(2, 70px)
+        .main__content__header__wrapper .main__content__header__man
+            display: none
