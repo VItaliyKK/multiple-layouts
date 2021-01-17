@@ -1,0 +1,95 @@
+//
+// ** Here are styles for 'sideContent' section **
+//
+    
+.side__content
+    display: grid
+    grid-template-rows: 160px 2fr 1fr
+    grid-row-gap: 24px
+    overflow-y: auto
+    .side__content__header
+        display: grid
+        grid-gap: 20px
+        grid-template-areas: "sr sr sr sr sr sr notf prf" "cmp cmp cmp cmp prg prg prg prg"    
+        grid-template-rows: 2fr 5fr
+        padding-top: 20px
+        .side__content__header__search
+            grid-area: sr 
+            display: grid
+            grid-template-columns: 1fr 6fr
+            svg
+                align-self: center
+                justify-self: center
+            input
+                background: none
+                border: none
+        .side__content__header__notification
+            grid-area: notf
+            display: flex
+            align-items: center
+            justify-content: center
+        .side__content__header__profile
+            grid-area: prf
+            width: 35px
+            height: 35px
+            background-color: grey
+            border-radius: 10px
+        .side__content__header__completed
+            grid-area: cmp
+        .side__content__header__progress
+            grid-area: prg
+        .side__content__header__search, 
+        .side__content__header__completed, 
+        .side__content__header__progress
+            background-color: $mddl-col    
+            border-radius: $brd-rads
+        .side__content__header__completed,   
+        .side__content__header__progress 
+            display: flex
+            align-items: center
+            justify-content: center
+            h2
+                font-size: 50px
+                position: relative
+                top: 6px
+                margin-right: 5px
+            p
+                font-size: 16px    
+    .side__content__statistics
+        h2
+            font-size: 24px
+        img
+            width: 100%
+        .side__content__statistics__options
+            margin-top: 10px
+        .side__content__statistics__options a
+            color: grey
+            margin-right: 10px
+            &.active
+               color:   $drk-col 
+    .side__content__premium
+        background-color: $mddl-col
+        color: $drk-col
+        padding: 10px
+        border-radius: $brd-rads
+        display: grid
+        grid-template-columns: 3fr 2fr
+        img
+            align-self: center
+            justify-self: center
+        .side__content__premium__info
+            display: flex
+            flex-direction: column
+            align-items: flex-start    
+            justify-content: space-around
+            padding: 10px
+            h2
+                font-size: 24px
+            button
+                padding: 10px 15px
+                background-color: $drk-col
+                color: $lght-col
+                border-radius: 10px   
+                font-weight: bold
+            p
+                font-family: $sub-font

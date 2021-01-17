@@ -1,0 +1,146 @@
+//
+// ** Here are styles for 'mainContent' section **
+//
+
+.main__content
+    display: grid
+    grid-template-rows: 160px 80px auto
+    grid-row-gap: 24px
+    overflow-y: auto
+    .main__content__header__wrapper
+        position: relative
+        overflow: hidden
+        .main__content__header
+            display: flex
+            flex-direction: column
+            justify-content: center
+            height: 140px
+            padding: 30px
+            border-radius: $brd-rads
+            margin-top: 20px
+            background-color: $mddl-col
+            h2
+                font-size: 36px
+            p
+                font-family: $sub-font
+                font-size: 16px
+        .main__content__header__man
+            position: absolute 
+            height: 250px
+            top: 0px
+            right: 0px   
+    .main__content__box
+        display: grid
+        grid-template-columns: 8fr 1fr 1fr
+        grid-column-gap: 20px 
+        .main__content__box__lang
+            background-color: $mddl-col
+            border-radius: $brd-rads
+            display: grid
+            grid-template-columns: 64px 3fr 1fr 2fr
+            .main__content__course_logo
+                background-color: $lght-col
+                padding: 5px
+                width: 50px
+                height: 50px
+                border-radius: $brd-rads
+                align-self: center
+                justify-self: center
+                display: flex
+                align-items: center
+                justify-content: center
+                grid-column-gap: 15px
+            .main__content__box__lang__info
+                display: flex
+                align-items: flex-start
+                justify-content: center
+                flex-direction: column
+            .main__content__box__lang__info h3
+                font-size: 16px
+            .main__content__box__lang__info p
+                font-size: 13px
+                font-family: $sub-font 
+            .main__content__box__lang__percent
+                position: relative
+                align-self: center
+                justify-self: center
+                p
+                    font-size: 13px
+                div
+                    position: absolute
+                    border: 3px solid $drk-col
+                    border-radius: 50%
+                    width: 40px
+                    height: 40px
+                    top: -16px
+                    left: -8px
+            button
+                align-self: center
+                justify-self: center 
+                padding: 10px 15px
+                background-color: $drk-col
+                color: $lght-col
+                border-radius: 10px   
+                font-weight: bold        
+        .main__content__box_prev, .main__content__box_next
+            align-self: center
+            justify-self: center
+    .main__content__courses
+        h2
+            font-size: 24px
+        .main__content__courses__options
+            margin-top: 10px    
+        .main__content__courses__options a
+            text-decoration: none
+            color: grey
+            margin-right: 10px
+            &.active
+                color: $drk-col
+        .main__content__courses__list .main__content__course
+            margin-top: 15px
+            border-radius: $brd-rads
+            background-color: $mddl-col
+            color: $drk-col
+            height: 80px
+            display: grid
+            grid-template-columns: 64px 3fr 2fr 1fr 2fr
+            .main__content__course_logo
+                background-color: $lght-col
+                padding: 5px
+                width: 50px
+                height: 50px
+                border-radius: $brd-rads
+                align-self: center
+                justify-self: center
+                display: flex
+                align-items: center
+                justify-content: center
+                grid-column-gap: 15px
+            .main__content__course__info
+                display: flex
+                align-items: flex-start
+                justify-content: center
+                flex-direction: column
+            .main__content__course__info h3
+                font-size: 16px
+            .main__content__course__info p
+                font-size: 13px
+                font-family: $sub-font
+            .main__content__course__rating, .main__content__course__time, button
+                align-self: center
+                justify-self: center
+            .main__content__course__time, .main__content__course__rating
+                display: flex
+                align-items: center
+                justify-content: center
+                svg
+                    position: relative
+                    top: -3px
+                    left: -3px
+            button
+                padding: 3px 12px
+                border-radius: 4px
+                color: $drk-col
+                border: 2px solid $drk-col
+                font-family: $main-font
+                font-weight: bold

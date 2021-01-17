@@ -1,0 +1,25 @@
+@import '_fonts'
+@import '_variables'
+@import 'sidebar'
+@import 'mainContent'
+@import 'sideContent'
+
+
+// hidden scrollbar
+::-webkit-scrollbar
+    width: 0px
+
+body
+    font-family: $main-font
+    width: 100vw
+    min-height: 100vh
+    background-color: $lght-col
+    color: $drk-col
+    display: grid
+    grid-template-columns: 132px 5fr 4fr
+    grid-column-gap: 64px
+    padding: 24px 32px
+
+
+.sidebar, .main__content, .side__content
+    max-height: calc(100vh - 48px)
