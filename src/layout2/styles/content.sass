@@ -1,0 +1,55 @@
+//
+// **  Here are styles for 'sidebar' section **
+//  
+
+
+.main
+    display: grid
+    grid-template-rows: 140px 40px 40px 120px auto
+    min-height: 100vh
+    padding: 0 30px
+    .main__header
+        display: grid
+        grid-template-columns: auto 40px 40px 40px
+        grid-column-gap: 10px
+        .main__header__prices, .main__header__search, .main__header__notification, .main__header__profile__photo   
+            align-self: center
+            justify-self: center 
+        .main__header__profile__photo img
+            width: 25px
+            border-radius: 50%
+        .main__header__prices
+            justify-self: baseline
+            display: grid
+            grid-template-columns: repeat(5, auto)
+            grid-column-gap: 15px
+            .main__header__prices_indicator
+                padding: 5px 10px
+                border-radius: 5px
+                box-shadow: 0px 6px 20px 3px #8080802e
+                font-size: 12px
+                span:first-child
+                    color: $sec-text-col
+                span:last-child
+                    font-weight: bold        
+    .main__overview
+        display: grid
+        grid-template-columns: 155px auto 80px 80px
+        grid-column-gap: 10px
+        font-size: 14px
+        .main__overview__title
+            font-family: $head-font
+            font-size: 32px
+            position: relative
+            top: -3px
+
+
+
+
+
+
+
+
+//
+// ** shared classes **
+//

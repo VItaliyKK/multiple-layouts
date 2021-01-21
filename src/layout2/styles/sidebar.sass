@@ -9,64 +9,72 @@
     border-bottom-right-radius: $brd-radius
     transition: all 0.2s linear
     display: grid
-    grid-template-rows: 140px auto
+    grid-template-rows: 140px auto 60px
+    overflow: hidden
+    min-height: 100vh
     .sidebar__header
         display: grid
-        grid-template-columns: 2fr 5fr 2fr 2fr
+        grid-template-columns: 2fr 6fr 3fr 3fr
         align-self: center
         .sidebar__header__logo__tittle
             grid-column-start: 2
             grid-column-end: 4
             align-self: center
             img
-                width: 110px
+                width: 120px
         .sidebar__toggle__hide
             background-color: #9a2db6   
-            height: 50px
+            height: 60px
             color: inherit
             border-radius: 15px
             border-bottom-right-radius: 0
-    .navigation__wrapper
-        .navigation__links
-            font-size: 14px
-        .navigation__header, .navigation__link
-            display: grid
-            grid-template-columns: 2fr 1fr 5fr 1fr 2fr
-            .svg, .navigation__short__line
-                grid-column-start: 2
-                grid-column-end: 3
-                align-self: center
-            .navigation__link__name, .navigation__link__quantity, .navigation__link__mark
-                align-self: center  
-            .navigation__link__quantity
-                color: #9a2db6
-                justify-self: end
-            .navigation__link__mark
-                color: red
-        .navigation__header, .navigation__sublink
-            grid-template-rows: repeat(2, 40px)
-            .navigation__header__overview, .navigation__empty
-                grid-column-start: 3
-                grid-column-end: 6
-                align-self: center
-            .navigation__sublink__name
-                align-self: center   
-        .navigation__link
-            grid-template-rows: 40px
+    .navigation__header
+        display: grid
+        grid-template-columns: 2fr 1fr 5fr 3fr 3fr
+        grid-template-rows: 40px
+    .navigation__icon
+        grid-column-start: 2
+    .navigation_row_space
+        display: grid
+        grid-template-columns: 2fr 1fr 11fr
+        grid-template-rows: 40px
+        span
+            justify-self: center
+    .nav__link
+        display: grid
+        grid-template-rows: 40px
+        grid-template-columns: 2fr 1fr 5fr 3fr 3fr
+        color: $trd-col
+        font-size: 16px
+        transition: all 0.2s linear
+        &:hover
+            background-color: $drk-sec-col
+        .nav__link__quantity
+            justify-self: end
+            margin-right: 10px
+            color:#9a2db6
+        .nav__link__mark
+            color: red
+    .sidebar__footer
+        display: grid
+        grid-template-columns: 1fr 3fr
+        background-color: $drk-sec-col
+        border-radius: 15px
+        .sidebar__footer__config
+            display: flex
+            align-items: center
+            justify-content: center
+            background-color: #d52955
+            border-radius: 15px
+            border-bottom-left-radius: 0
+        .sidebar__footer__title
             color: $trd-col
-        .navigation__sublink .navigation__line__space
-            display: grid
-            grid-template-columns: 2fr 1fr 8fr
-            grid-template-rows: 40px
-            .navigation__short__line__space
-                grid-column-start: 2
-                align-self: center
-                justify-self: center
-            .navigation__line__space__empty
+            font-size: 12px
+            justify-self: center
 
+//
+// ** shared classes **
+//
 
-
-
-
-.nav__link__margin__left
+.link__margin__left
     margin-left: 10px            
