@@ -1,0 +1,72 @@
+//
+// **  Here are styles for 'sidebar' section **
+//  
+
+.sidebar
+    color: $trd-col
+    background-color: $sec-col 
+    border-top-right-radius: $brd-radius
+    border-bottom-right-radius: $brd-radius
+    transition: all 0.2s linear
+    display: grid
+    grid-template-rows: 140px auto
+    .sidebar__header
+        display: grid
+        grid-template-columns: 2fr 5fr 2fr 2fr
+        align-self: center
+        .sidebar__header__logo__tittle
+            grid-column-start: 2
+            grid-column-end: 4
+            align-self: center
+            img
+                width: 110px
+        .sidebar__toggle__hide
+            background-color: #9a2db6   
+            height: 50px
+            color: inherit
+            border-radius: 15px
+            border-bottom-right-radius: 0
+    .navigation__wrapper
+        .navigation__links
+            font-size: 14px
+        .navigation__header, .navigation__link
+            display: grid
+            grid-template-columns: 2fr 1fr 5fr 1fr 2fr
+            .svg, .navigation__short__line
+                grid-column-start: 2
+                grid-column-end: 3
+                align-self: center
+            .navigation__link__name, .navigation__link__quantity, .navigation__link__mark
+                align-self: center  
+            .navigation__link__quantity
+                color: #9a2db6
+                justify-self: end
+            .navigation__link__mark
+                color: red
+        .navigation__header, .navigation__sublink
+            grid-template-rows: repeat(2, 40px)
+            .navigation__header__overview, .navigation__empty
+                grid-column-start: 3
+                grid-column-end: 6
+                align-self: center
+            .navigation__sublink__name
+                align-self: center   
+        .navigation__link
+            grid-template-rows: 40px
+            color: $trd-col
+        .navigation__sublink .navigation__line__space
+            display: grid
+            grid-template-columns: 2fr 1fr 8fr
+            grid-template-rows: 40px
+            .navigation__short__line__space
+                grid-column-start: 2
+                align-self: center
+                justify-self: center
+            .navigation__line__space__empty
+
+
+
+
+
+.nav__link__margin__left
+    margin-left: 10px            
