@@ -2,7 +2,24 @@
 // **  Here are styles for 'sidebar' section **
 //  
 
+$main-col:  #ffffff
+$sec-col:    #491556
+$drk-sec-col:   #3c1147
+$trd-col:   #c7b6ca
+$main-text-col: #000000
+$sec-text-col:  #ababab
+$main-font: "Nunito-Light"
+$sec-font: "Poppins-Medium"
+$head-font: "Poppins-SemiBold"
+$brd-radius: 20px
+
 .sidebar
+    &::-webkit-scrollbar
+        display: none
+
+    position: fixed
+    top: 0
+    left: 0
     color: $trd-col
     background-color: $sec-col 
     border-top-right-radius: $brd-radius
@@ -11,7 +28,12 @@
     display: grid
     grid-template-rows: 140px auto 60px
     overflow: hidden
-    min-height: 100vh
+    height: 100vh
+    width: 240px
+    overflow-y: auto
+    z-index: 999
+    transition: left 0.2s linear
+
     .sidebar__header
         display: grid
         grid-template-columns: 2fr 6fr 3fr 3fr
@@ -78,3 +100,14 @@
 
 .link__margin__left
     margin-left: 10px            
+
+
+//
+// ** media queries **
+//
+@media screen and (max-width: 1180px)
+    .sidebar.hidden
+        left: -240px
+        .sidebar__toggle__hide
+            position: relative
+            right: 0

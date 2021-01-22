@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
     <title>Layout 2</title>
     <link rel="stylesheet" href="../shared/reset.min.css">
     <link rel="stylesheet" href="layout2.min.css">
@@ -76,26 +76,31 @@
         </div>
     </section>
 
+    <div></div>
+
     <main class="main">
         <div class="main__header">
             <div class="main__header__prices">
-                <div class="main__header__prices_indicator">
+                <button class="main__header__prices_indicator grid__center show__sidebar" id="show__sidebar">
+                    <svg enable-background="new 0 0 24 24" viewBox="0 0 24 24" width="24" height="24"><path d="M11.3,12l3.5-3.5c0.4-0.4,0.4-1,0-1.4c-0.4-0.4-1-0.4-1.4,0l-4.2,4.2l0,0c-0.4,0.4-0.4,1,0,1.4l4.2,4.2	c0.2,0.2,0.4,0.3,0.7,0.3l0,0c0.3,0,0.5-0.1,0.7-0.3c0.4-0.4,0.4-1,0-1.4L11.3,12z" fill="#ffffff"></path></svg>
+                </button>
+                <div class="main__header__prices_indicator grid__center">
                     <span>Balance:</span>
                     <span>5.327</span>
                 </div>
-                <div class="main__header__prices_indicator">
+                <div class="main__header__prices_indicator grid__center">
                     <span>TCV:</span>
                     <span>4.359</span>
                 </div>
-                <div class="main__header__prices_indicator">
+                <div class="main__header__prices_indicator grid__center">
                     <span>TPV:</span>
                     <span>5.761</span>
                 </div>
-                <div class="main__header__prices_indicator">
+                <div class="main__header__prices_indicator grid__center">
                     <span>BTC:</span>
                     <span>$32,746</span>
                 </div>
-                <div class="main__header__prices_indicator">••</div>
+                <div class="main__header__prices_indicator grid__center">••</div>
             </div>
             <button class="main__header__search">
                 <svg viewBox="0 0 24 24" width="20" height="20"><g fill="#ababab"><g fill="#ababab" ><rect width="24" height="24" opacity="0" fill="#ababab"/><path d="M20.71 19.29l-3.4-3.39A7.92 7.92 0 0 0 19 11a8 8 0 1 0-8 8 7.92 7.92 0 0 0 4.9-1.69l3.39 3.4a1 1 0 0 0 1.42 0 1 1 0 0 0 0-1.42zM5 11a6 6 0 1 1 6 6 6 6 0 0 1-6-6z" fill="#ababab"/></g></g></svg>
@@ -110,16 +115,146 @@
         <div class="main__overview">
             <h2 class="main__overview__title grid__center">Overview</h2>
             <p class="main__overview__market grid__center">Market: Binance BTC</p>
-            <div class="main__overview grid__center">
+            <div class="main__overview__checkbox__wrapper grid__center">
                 <p>Sale mode</p>
+                <div class="main__overview__checkbox">
+                    <input type="checkbox" name="checkboxMode" id="checkboxMode">
+                    <label id="checkboxMode__backgr" for="checkboxMode">
+                        <div></div>
+                    </label>
+                </div>
             </div>
-            <div class="main__overview grid__center">
+            <div class="main__overview__checkbox__wrapper grid__center">
                 <p>SOMO</p>
+                <div class="main__overview__checkbox">
+                    <input type="checkbox" name="checkboxSomo" id="checkboxSomo">
+                    <label id="checkboxSomo__backgr" for="checkboxSomo">
+                        <div></div>
+                    </label>
+                </div>
             </div>
         </div>
-        <div></div>
-        <div class="main__progress">main__progress</div>
-        <div class="main__info">main__info</div>
+        <div class="main__progress__wrapper">
+            <div class="main__progress">
+                <div class="main__progress__icon" data-name="pairs"></div>
+                <h3 class="main__progress__title grid__center">Pairs</h3>
+                <svg class="main__progress__line grid__center" width="28" height="28" viewBox="0 0 16 16"><path fill="#ababab" d="M8 0h1v16H8V0z"/></svg>
+                <div class="main__progress__values grid__center">
+                    <p>CV <span>0.8016449</span></p>
+                    <p><span>-0.1064988</span> -14.93%</p>
+                    <p>BC <span>0.8121349</span></p>
+                </div>
+            </div>
+            <div class="main__progress">
+                <div class="main__progress__icon" data-name="dca"></div>
+                <h3 class="main__progress__title grid__center">DCA</h3>
+                <svg class="main__progress__line grid__center" width="28" height="28" viewBox="0 0 16 16"><path fill="#ababab" d="M8 0h1v16H8V0z"/></svg>
+                <div class="main__progress__values grid__center">
+                    <p>CV <span>0.642658</span></p>
+                    <p><span>-2.6064988</span> -26.5%</p>
+                    <p>BC <span>1.0721349</span></p>
+                </div>
+            </div>
+            <div class="main__progress">
+                <div class="main__progress__icon" data-name="pending"></div>
+                <h3 class="main__progress__title grid__center">Pending</h3>
+                <svg class="main__progress__line grid__center" width="28" height="28" viewBox="0 0 16 16"><path fill="#ababab" d="M8 0h1v16H8V0z"/></svg>
+                <div class="main__progress__values grid__center">
+                    <p>CV <span>0.8016449</span></p>
+                    <p><span>-0.1064988</span> -14.93%</p>
+                    <p>BC <span>0.8121349</span></p>
+                </div>
+            </div>
+            <div class="main__progress">
+                <div class="main__progress__icon" data-name="sales"></div>
+                <h3 class="main__progress__title grid__center">Sales</h3>
+                <svg class="main__progress__line grid__center" width="28" height="28" viewBox="0 0 16 16"><path fill="#ababab" d="M8 0h1v16H8V0z"/></svg>
+                <div class="main__progress__values grid__center">
+                    <p>CV <span>0.642658</span></p>
+                    <p><span>-2.6064988</span> -26.5%</p>
+                    <p>BC <span>1.0721349</span></p>
+                </div>
+            </div>
+        </div>
+        <div class="main__info">
+            <div class="main__info_wrapper">
+                <div class="main__info__header">
+                    <div class="main__info__icon grid__center">
+                        <svg viewBox="0 0 24 24" width="40" height="40"><path d="M21.87 11.5c-.64-1.11-4.16-6.68-10.14-6.5-5.53.14-8.73 5-9.6 6.5a1 1 0 0 0 0 1c.63 1.09 4 6.5 9.89 6.5h.25c5.53-.14 8.74-5 9.6-6.5a1 1 0 0 0 0-1zM12.22 17c-4.31.1-7.12-3.59-8-5 1-1.61 3.61-4.9 7.61-5 4.29-.11 7.11 3.59 8 5-1.03 1.61-3.61 4.9-7.61 5z" fill="#ffffff"/><path d="M12 8.5a3.5 3.5 0 1 0 3.5 3.5A3.5 3.5 0 0 0 12 8.5zm0 5a1.5 1.5 0 1 1 1.5-1.5 1.5 1.5 0 0 1-1.5 1.5z" fill="#ffffff" /></svg>
+                    </div>
+                    <div class="main__info__values grid__center">
+                        <h4>41,286.34</h4>
+                        <p>BTC USD Price</p>
+                    </div>
+                    <button class="main__info__option">••</button>
+                </div>
+                <div class="main__info__content">
+                    <div>
+                        <h4>0.82%</h4>
+                        <svg viewBox="0 0 24 24" width="24" height="24"><path d="M17,18H11a1,1,0,0,1,0-2h5V11a1,1,0,0,1,2,0v6A1,1,0,0,1,17,18Z" fill="#d41a1a"/><path d="M17,18a1,1,0,0,1-.71-.29l-10-10A1,1,0,0,1,7.71,6.29l10,10A1,1,0,0,1,17,18Z" fill="#d41a1a"/></svg>
+                    </div>
+                    <p class="main__info__trends">Trend USD last 1H</p>
+                    <div>
+                        <h4>5.71%</h4>
+                        <svg viewBox="0 0 24 24" width="24" height="24"><path d="M17,14a1,1,0,0,1-1-1V8H11a1,1,0,0,1,0-2h6a1,1,0,0,1,1,1v6A1,1,0,0,1,17,14Z" fill="#0d9450"/><path d="M7,18a1,1,0,0,1-.71-1.71l10-10a1,1,0,0,1,1.41,1.41l-10,10A1,1,0,0,1,7,18Z" fill="#0d9450"/></svg>
+                    </div>
+                    <p class="main__info__trends">Trend USD last 24H</p>
+                </div>
+            </div>
+            <div class="main__info_wrapper">
+                <div class="main__info__header">
+                    <div class="main__info__icon grid__center">
+                        <svg viewBox="0 0 24 24" width="40" height="40"><path d="M21.87 11.5c-.64-1.11-4.16-6.68-10.14-6.5-5.53.14-8.73 5-9.6 6.5a1 1 0 0 0 0 1c.63 1.09 4 6.5 9.89 6.5h.25c5.53-.14 8.74-5 9.6-6.5a1 1 0 0 0 0-1zM12.22 17c-4.31.1-7.12-3.59-8-5 1-1.61 3.61-4.9 7.61-5 4.29-.11 7.11 3.59 8 5-1.03 1.61-3.61 4.9-7.61 5z" fill="#ffffff"/><path d="M12 8.5a3.5 3.5 0 1 0 3.5 3.5A3.5 3.5 0 0 0 12 8.5zm0 5a1.5 1.5 0 1 1 1.5-1.5 1.5 1.5 0 0 1-1.5 1.5z" fill="#ffffff" /></svg>
+                    </div>
+                    <div class="main__info__values grid__center">
+                        <h4>41,286.34</h4>
+                        <p>BTC USD Price</p>
+                    </div>
+                    <button class="main__info__option">••</button>
+                </div>
+                <div class="main__info__content">
+                    <div>
+                        <h4>0.82%</h4>
+                        <svg viewBox="0 0 24 24" width="24" height="24"><path d="M17,18H11a1,1,0,0,1,0-2h5V11a1,1,0,0,1,2,0v6A1,1,0,0,1,17,18Z" fill="#d41a1a"/><path d="M17,18a1,1,0,0,1-.71-.29l-10-10A1,1,0,0,1,7.71,6.29l10,10A1,1,0,0,1,17,18Z" fill="#d41a1a"/></svg>
+                    </div>
+                    <p class="main__info__trends">Trend USD last 1H</p>
+                    <div>
+                        <h4>5.71%</h4>
+                        <svg viewBox="0 0 24 24" width="24" height="24"><path d="M17,14a1,1,0,0,1-1-1V8H11a1,1,0,0,1,0-2h6a1,1,0,0,1,1,1v6A1,1,0,0,1,17,14Z" fill="#0d9450"/><path d="M7,18a1,1,0,0,1-.71-1.71l10-10a1,1,0,0,1,1.41,1.41l-10,10A1,1,0,0,1,7,18Z" fill="#0d9450"/></svg>
+                    </div>
+                    <p class="main__info__trends">Trend USD last 24H</p>
+                </div>
+            </div>
+            <div class="main__info_wrapper">
+                <div class="main__info__header">
+                    <div class="main__info__icon grid__center">
+                        <svg viewBox="0 0 24 24" width="40" height="40"><path d="M21.87 11.5c-.64-1.11-4.16-6.68-10.14-6.5-5.53.14-8.73 5-9.6 6.5a1 1 0 0 0 0 1c.63 1.09 4 6.5 9.89 6.5h.25c5.53-.14 8.74-5 9.6-6.5a1 1 0 0 0 0-1zM12.22 17c-4.31.1-7.12-3.59-8-5 1-1.61 3.61-4.9 7.61-5 4.29-.11 7.11 3.59 8 5-1.03 1.61-3.61 4.9-7.61 5z" fill="#ffffff"/><path d="M12 8.5a3.5 3.5 0 1 0 3.5 3.5A3.5 3.5 0 0 0 12 8.5zm0 5a1.5 1.5 0 1 1 1.5-1.5 1.5 1.5 0 0 1-1.5 1.5z" fill="#ffffff" /></svg>
+                    </div>
+                    <div class="main__info__values grid__center">
+                        <h4>41,286.34</h4>
+                        <p>BTC USD Price</p>
+                    </div>
+                    <button class="main__info__option">••</button>
+                </div>
+                <div class="main__info__content">
+                    <div>
+                        <h4>0.82%</h4>
+                        <svg viewBox="0 0 24 24" width="24" height="24"><path d="M17,18H11a1,1,0,0,1,0-2h5V11a1,1,0,0,1,2,0v6A1,1,0,0,1,17,18Z" fill="#d41a1a"/><path d="M17,18a1,1,0,0,1-.71-.29l-10-10A1,1,0,0,1,7.71,6.29l10,10A1,1,0,0,1,17,18Z" fill="#d41a1a"/></svg>
+                    </div>
+                    <p class="main__info__trends">Trend USD last 1H</p>
+                    <div>
+                        <h4>5.71%</h4>
+                        <svg viewBox="0 0 24 24" width="24" height="24"><path d="M17,14a1,1,0,0,1-1-1V8H11a1,1,0,0,1,0-2h6a1,1,0,0,1,1,1v6A1,1,0,0,1,17,14Z" fill="#0d9450"/><path d="M7,18a1,1,0,0,1-.71-1.71l10-10a1,1,0,0,1,1.41,1.41l-10,10A1,1,0,0,1,7,18Z" fill="#0d9450"/></svg>
+                    </div>
+                    <p class="main__info__trends">Trend USD last 24H</p>
+                </div>
+            </div>
+        </div>
     </main>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+            integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs="
+            crossorigin="anonymous"></script>
+    <script src="./main.min.js"></script>
 </body>
 </html>
