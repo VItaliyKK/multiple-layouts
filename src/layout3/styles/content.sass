@@ -16,11 +16,52 @@ $main-col: #ffffff
 $sec-col: #71d3c8	
 $trd-col: #f8f8f7
 $title-col: #000000	
+$brd-rad: 10px
 
 
 .content__wrapper
 	display: flex
+	margin-top: 30px
 	.content
 		flex-grow: 1
+		.content__popular
+			@include flex(center, space-between)
+			min-height: 200px
+			.content__popular__photo
+				margin-right: 20px
+				flex-basis: 60%
+				width: 100%
+				height: 220px
+				border-radius: $brd-rad
+				background-image: url(./assets/background-popular.jpg)
+			.content__popular__list
+				flex-basis: 45%
+				.content__popular__hotel
+					@include flex(center, space-between)
+					box-shadow: 0px 0px 15px 0px #80808057
+					border-radius: $brd-rad
+					margin-top: 20px
+					padding: 10px
+					.content__popular__hotel__logo
+						flex-basis: 60px
+						width: 60px
+						height: 60px
+						background: grey
+						border-radius: $brd-rad
+				.content__popular__hotel:nth-child(1)
+					margin: 0
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	.right__sidebar
-		flex-basis: 300px	
+		flex-basis: 300px
+		padding-left: 30px
