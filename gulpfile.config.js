@@ -20,6 +20,10 @@ module.exports = {
             src: 'src/layout2/styles/*.sass',
             dest: 'docs/layout2'
         },
+        layout3: {
+            src: 'src/layout3/styles/*.sass',
+            dest: 'docs/layout3'    
+        },
         reset:{
             src: 'src/shared/reset.sass',
             dest: 'docs/shared'

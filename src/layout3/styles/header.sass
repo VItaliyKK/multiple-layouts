@@ -1,0 +1,63 @@
+//
+// **  Here are styles for 'header' section **
+//  
+
+@mixin flex($alignItems, $justifyContent)		
+	display: flex
+	
+	@if $alignItems
+		align-items: $alignItems
+
+	@if $justifyContent
+		justify-content: $justifyContent	
+
+
+$main-col: #ffffff	
+$sec-col: #71d3c8	
+$trd-col: #f8f8f7
+$title-col: #000000	
+$brd-rad: 8px
+
+
+
+.header
+	@include flex(center, space-between)
+	height: 40px
+	.header__left
+		@include flex(center, space-between)
+		flex-grow: 1
+		height: 100%
+		h2
+			font-family: "Nunito"
+			font-size: 22px
+		.header__search__wrapper
+			background-color: $trd-col
+			padding: 0 10px
+			border-radius: $brd-rad
+			.header__search
+				border: none
+				height: 36px
+				outline: none
+				color: grey
+				padding: 0 10px	
+				background-color: transparent
+				font-family: "Comfortaa"
+	.header__right  
+		@include flex(center, flex-end)  
+		flex-basis: 300px
+		height: 100%
+		.header__notification
+			@include flex(center, center)
+			background-color: $sec-col
+			width: 40px
+			height: 40px
+			border-radius: $brd-rad
+			margin-left: 15px
+		button
+			height: 40px
+			border: 1px solid $sec-col
+			padding: 0 10px
+			border-radius: 8px
+			color: $sec-col	
+			font-family: "Comfortaa"
+			font-size: 11px

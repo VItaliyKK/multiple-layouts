@@ -1,0 +1,60 @@
+//
+// **  Here are styles for 'sidebar' section **
+//    
+
+
+@mixin box($color, $background, $borderRadius, $padding, $margin, $width, $height)
+	@if $color
+		color: $color
+
+	@if $background
+		background: $background
+
+	@if $borderRadius
+		border-radius: $borderRadius
+
+	@if $padding
+		padding: $padding
+
+	@if $margin
+		margin: $margin	
+
+	@if $width
+		width: $width
+
+	@if $height
+		height: $height
+
+
+@mixin flex($alignItems, $justifyContent)		
+	display: flex
+	
+	@if $alignItems
+		align-items: $alignItems
+
+	@if $justifyContent
+		justify-content: $justifyContent
+
+
+$main-col: #ffffff	//white
+$sec-col: #71d3c8	//blue-green
+$trd-col: #f8f8f7	//grey
+$title-col: #000000	//black
+$brd-rad: 8px
+
+.sidebar
+	//@include box(false, yellow, 10px, false, 10px 5px, 50px, 50px)
+	@include flex(center, space-between)
+	flex-direction: column
+	flex-basis: 100px
+	border-right: 2px solid $trd-col
+	.sidebar__title h1
+		font-size: 56px	
+		font-family: 'Nunito'
+		background: -webkit-linear-gradient(6rad, #71d3c8, #3b32ce, #f00)
+		-webkit-background-clip: text
+		-webkit-text-fill-color: transparent
+	.sidebar__nav
+		flex-grow: 1
+		.sidebar__nav__link
+			margin-top: 30px

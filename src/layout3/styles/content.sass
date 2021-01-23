@@ -1,0 +1,26 @@
+//
+// **  Here are styles for 'main' section **
+//  
+
+@mixin flex($alignItems, $justifyContent)		
+	display: flex
+	
+	@if $alignItems
+		align-items: $alignItems
+
+	@if $justifyContent
+		justify-content: $justifyContent	
+
+
+$main-col: #ffffff	
+$sec-col: #71d3c8	
+$trd-col: #f8f8f7
+$title-col: #000000	
+
+
+.content__wrapper
+	display: flex
+	.content
+		flex-grow: 1
+	.right__sidebar
+		flex-basis: 300px	
