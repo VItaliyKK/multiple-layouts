@@ -23,10 +23,16 @@ $brd-rad: 8px
 .header
 	@include flex(center, space-between)
 	height: 40px
+	position: sticky
+	top: 0
+	background-color: $main-col
+	z-index: 99
 	.header__left
 		@include flex(center, space-between)
 		flex-grow: 1
 		height: 100%
+		.toggle__sidebar
+			display: none
 		h2
 			font-family: "Nunito"
 			font-size: 22px
@@ -55,7 +61,13 @@ $brd-rad: 8px
 			height: 40px
 			border-radius: $brd-rad
 			margin-left: 15px
-		button
+			transition: all 0.5s
+			border: 1px solid $sec-col
+			&:hover
+				background-color: $main-col
+				path
+					fill: $sec-col
+		.header__date
 			height: 40px
 			border: 1px solid $sec-col
 			padding: 0 10px
@@ -63,3 +75,15 @@ $brd-rad: 8px
 			color: $sec-col	
 			font-family: "Comfortaa"
 			font-size: 11px
+			transition: all 0.5s
+			&:hover
+				color: $main-col
+				background-color: $sec-col
+
+
+//
+// ** media queries **
+//
+@media screen and (max-width: 1100px)
+	.header .header__left .toggle__sidebar
+		display: block				
