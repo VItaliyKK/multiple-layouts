@@ -2,22 +2,7 @@
 // **  Here are styles for 'sidebar' section **
 //    
 
-@mixin flex($alignItems, $justifyContent)		
-	display: flex
 	
-	@if $alignItems
-		align-items: $alignItems
-
-	@if $justifyContent
-		justify-content: $justifyContent
-
-
-$main-col: #ffffff	//white
-$sec-col: #71d3c8	//blue-green
-$trd-col: #f8f8f7	//grey
-$title-col: #000000	//black
-$brd-rad: 10px
-
 #sidebar__plane
 	flex-basis: 100px
 	flex-shrink: 0
@@ -72,5 +57,7 @@ $brd-rad: 10px
 @media screen and (max-width: 1100px)
 	#sidebar__plane
 		display: none
-	.sidebar.hidden
-		left: -100px
+	.sidebar
+		box-shadow: 0 0 15px 0 #80808057
+		&.hidden
+			left: -100px

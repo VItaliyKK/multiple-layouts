@@ -1,21 +1,6 @@
 //
-// **  Here are styles for 'main' section **
+// **  Here are styles for right sidebar section **
 //  
-
-@mixin flex($alignItems, $justifyContent)		
-	display: flex
-	
-	@if $alignItems
-		align-items: $alignItems
-
-	@if $justifyContent
-		justify-content: $justifyContent	
-
-$main-col: #ffffff	
-$sec-col: #71d3c8	
-$trd-col: #f8f8f7
-$title-col: #000000	
-$brd-rad: 10px
 
 #aside__plane
 	flex-shrink: 0
@@ -126,6 +111,11 @@ $brd-rad: 10px
 			height: 60px
 			color: $main-col
 			font-size: 16px
+			border: 1px solid $sec-col
+			transition: all 0.25s
+			&:hover
+				background-color: $main-col
+				color: $sec-col
 		.side__content__checkout__persons
 			flex-basis: 50%
 			p, span, button
@@ -142,3 +132,46 @@ $brd-rad: 10px
 				button
 					font-size: 26px
 					padding: 0 5px
+
+
+//
+// ** media queries **
+//
+
+@media screen and (max-width: 768px)
+	.content__wrapper .side__content 
+			justify-content: center!important
+			.side__content__checkout
+				flex-basis: 100%
+				margin-top: 30px!important				
+
+@media screen and (max-width: 768px)
+	.side__content
+		flex-wrap: wrap
+		.side__content__period
+			flex-basis: 100%
+			margin-bottom: 30px
+		.side__content__card
+			margin-left: 0!important
+		.side__content__checkout
+			margin-top: 30px
+
+@media screen and (max-width: 992px)
+	#aside__plane
+		display: none
+	.content__wrapper
+		flex-direction: column-reverse
+		.side__content
+			position: static
+			@include flex(stretch, space-between)
+			flex-direction: row
+			width: 100%
+			padding: 0 0 30px
+			.side__content__period, .side__content__checkout
+				flex-grow: 1
+			.side__content__card
+				flex-basis: 270px
+				margin: 0 20px
+				flex-shrink: 0
+			.side__content__checkout
+				margin-top: 0									

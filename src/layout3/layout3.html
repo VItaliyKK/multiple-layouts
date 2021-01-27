@@ -65,9 +65,7 @@
 							<div class="content__popular__hotel__logo"></div>
 							<div class="content__popular__hotel__info">
 								<h3>The Face Hotel</h3>
-								<div class="content__popular__hotel__rating">
-									stars
-								</div>
+								<span class="content__popular__hotel__rating">4.9</span>
 							</div>
 							<div>$ 558</div>
 						</div>
@@ -75,9 +73,7 @@
 							<div class="content__popular__hotel__logo"></div>
 							<div class="content__popular__hotel__info">
 								<h3>The Face Hotel</h3>
-								<div class="content__popular__hotel__rating">
-									stars
-								</div>
+								<span class="content__popular__hotel__rating">4.6</span>
 							</div>
 							<div>$ 558</div>
 						</div>
@@ -85,9 +81,7 @@
 							<div class="content__popular__hotel__logo"></div>
 							<div class="content__popular__hotel__info">
 								<h3>The Face Hotel</h3>
-								<div class="content__popular__hotel__rating">
-									stars
-								</div>
+								<span class="content__popular__hotel__rating">4.2</span>
 							</div>
 							<div>$ 558</div>
 						</div>
@@ -161,9 +155,9 @@
 					<div class="side__content__checkout__persons">
 						<p>persons</p>
 						<div id="persons__switch">
-							<button>-</button>
-							<span>3</span>
-							<button>+</button>
+							<button onclick="count(false)">-</button>
+							<span id="persons__switch__indicator">3</span>
+							<button onclick="count(true)">+</button>
 						</div>
 					</div>
 					<button>Checkout</button>

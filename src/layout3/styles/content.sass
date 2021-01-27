@@ -1,24 +1,6 @@
 //
-// **  Here are styles for 'main' section **
-//  
-
-@mixin flex($alignItems, $justifyContent)		
-	display: flex
-	
-	@if $alignItems
-		align-items: $alignItems
-
-	@if $justifyContent
-		justify-content: $justifyContent	
-
-
-$main-col: #ffffff	
-$sec-col: #71d3c8	
-$trd-col: #f8f8f7
-$title-col: #000000	
-$brd-rad: 10px
-$malaysiaImgs: "1" "malaysia-travel-1.jpg", "2" "malaysia-travel-2.jpg", "3" "malaysia-travel-3.jpg", "4" "malaysia-travel-4.jpg"
-$hotelsMap: "1" "hotel-1.jpg", "2" "hotel-2.jpg", "3" "hotel-3.jpg"
+// ** appropriation backgroundImage for each photos of content **
+//			
 
 @each $n, $fileName in $malaysiaImgs
 	.content__photos__img:nth-child(#{$n})
@@ -27,7 +9,11 @@ $hotelsMap: "1" "hotel-1.jpg", "2" "hotel-2.jpg", "3" "hotel-3.jpg"
 @each $n, $fileName in $hotelsMap
 	.content__popular__hotel:nth-child(#{$n}) .content__popular__hotel__logo
 		background-image: url(./assets/#{$fileName})	
-	
+
+//
+// **  Here are styles for 'main' section **
+//  
+
 .content__wrapper
 	display: flex
 	margin-top: 30px
@@ -50,10 +36,12 @@ $hotelsMap: "1" "hotel-1.jpg", "2" "hotel-2.jpg", "3" "hotel-3.jpg"
 				flex-basis: 45%
 				.content__popular__hotel
 					@include flex(center, space-between)
-					box-shadow: 0px 0px 15px 0px #80808057
 					border-radius: $brd-rad
 					margin-top: 20px
 					padding: 10px
+					&:hover
+						cursor: pointer
+						box-shadow: 0px 0px 15px 0px #80808057
 					.content__popular__hotel__logo
 						flex-basis: 60px
 						width: 60px
@@ -61,9 +49,15 @@ $hotelsMap: "1" "hotel-1.jpg", "2" "hotel-2.jpg", "3" "hotel-3.jpg"
 						border-radius: $brd-rad
 						background-size: cover
 						box-shadow: inset 0px 0px 6px #80808085
+						background-position: center
+						flex-shrink: 0
 					.content__popular__hotel__info
 						padding-left: 20px
 						flex-grow: 1
+						.content__popular__hotel__rating
+							display: block
+							color: lightgrey
+							margin-top: 5px
 				.content__popular__hotel:nth-child(1)
 					margin: 0
 		.content__details
@@ -95,6 +89,8 @@ $hotelsMap: "1" "hotel-1.jpg", "2" "hotel-2.jpg", "3" "hotel-3.jpg"
 			.content__option
 				color: lightgrey
 				margin-right: 30px
+				&:hover
+					cursor: pointer
 			.content__option.active
 				color: $sec-col
 		.content__describe
@@ -129,5 +125,24 @@ $hotelsMap: "1" "hotel-1.jpg", "2" "hotel-2.jpg", "3" "hotel-3.jpg"
 //
 // ** media queries **
 //
+@media screen and (max-width: 578px)
+	.content__wrapper .content 
+		.content__photos__wrapper 
+			display: block!important
+			.content__photos__img
+				margin: 0 0 20px!important
+		.content__options .content__option
+			margin-right: 15px
+
+@media screen and (max-width: 768px)
+	.content__wrapper .content .content__popular
+		display: block
+		.content__popular__photo
+			margin-bottom: 30px
+
 @media screen and (max-width: 1100px)
-	.content__wrapper .content .content__popular .content__popular__photo
+	.content__wrapper .content .content__popular 
+		.content__popular__photo
+			flex-basis: 40%
+		.content__popular__list
+			flex-basis: 60%
