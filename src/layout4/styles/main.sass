@@ -1,0 +1,13 @@
+@import '_fonts'
+@import '_mixins'
+@import '_variables'
+@import 'sidebar'
+
+body
+    width: 100vw
+    min-height: 100vh
+    font-family: $main-font
+    color: $main-col
+    font-weight: bold
+    background-image: linear-gradient(25deg, #730801, #9e0000, #290073, #0d4b7d, #000833, #09186d)
+    @include addGrid(250px 1fr, false)
