@@ -4,24 +4,55 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Multiple layouts</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="shared/reset.min.css">
     <link rel="stylesheet" href="main.min.css">
 </head>
 <body>
-    <header>
+    <header id="header__box">
         <h1>Multiple layouts</h1>
     </header>
 
     <main class="layouts__wrapper">
-        <a class="layout__link" href="./layout1/layout1.html" data-name='Layout 1'>
-            <div style="background-image: url(./assets/layout1.jpg);"></div>
-        </a>
-        <a class="layout__link" href="./layout2/layout2.html" data-name='Layout 2'>
-            <div style="background-image: url(./assets/layout2.png);"></div>
-        </a>
-        <a class="layout__link" href="./layout3/layout3.html" data-name='Layout 3'>
-            <div style="background-image: url(./assets/layout3.png);"></div>
-        </a>
+        <div class="layout__cub__wrapper">
+            <div class="layout__cub">
+                <div class="front" style="background-image: url(./assets/layout1.jpg);"></div>
+                <a class="bottom" href="#">
+                    <button class="bottom__button" data-list="GRID, VARIABLES">
+                        <h2>View</h2>
+                    </button>
+                </a>
+                <div class="left"></div>
+            </div>
+        </div>
+        <div class="layout__cub__wrapper">
+            <a class="layout__cub" href="#">
+                <div class="front" style="background-image: url(./assets/layout2.png);"></div>
+                <div class="bottom">
+                    <button class="bottom__button" data-list="GRID, VARIABLES">
+                        <h2>View</h2>
+                    </button>
+                </div>
+                <div class="left"></div>
+            </a>
+        </div>
+        <div class="layout__cub__wrapper">
+            <a class="layout__cub" href="#">
+                <div class="front" style="background-image: url(./assets/layout3.png);"></div>
+                <div class="bottom">
+                    <button class="bottom__button" data-list="FLEX, VARIABLES, MIXINS, EACH">
+                        <h2>View</h2>
+                    </button>
+                </div>
+                <div class="left"></div>
+            </a>
+        </div>
     </main>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+            integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs="
+            crossorigin="anonymous"></script>
+	<script src="./main.min.js"></script>
 </body>
 </html>

@@ -1,11 +1,23 @@
-$main-font: fangsong, system-ui, sans-serif
+//
+// ** variables **
+//  
+$main-font: 'Rajdhani', fangsong, system-ui, sans-serif
+$size-cub: 200px
+$size-cub-half: $size-cub / 2
+$main-col: #3f51b5
+
+//
+// **  Here are styles for main page **
+//  
 
 body
   font-family: $main-font
   width: 100vw
-  height: 100vh
-  background-color: #ececec
-  color: #8a8a8a
+  min-height: 100vh
+  background: radial-gradient($main-col, black)
+  background-size: 100vw 100vh
+  background-attachment: fixed
+  color: #ffffff
   padding: 25px
   display: flex
   align-items: center
@@ -18,53 +30,86 @@ header
   left: 0
   z-index: 999
   padding: 30px
-  background-color: #ecececd6
   h1
     text-align: center
-    font-size: 24px
+    font-size: 34px
     font-weight: bold
     text-transform: uppercase
+    background: linear-gradient(0deg, $main-col,#1ea0e9, $main-col)
+    -webkit-background-clip: text
+    -webkit-text-fill-color: transparent
 
 .layouts__wrapper
   display: flex
   width: 100%
-  height: 400px
-  .layout__link
-    flex-grow: 1
-    transition: all 0.2s linear
-    border-radius: 20px
-    position: relative
-    & div
-      width: 100%
-      height: 100%
-      overflow: hidden
-      border-radius: 20px
-      background-size: cover
-    &:after
-      content: attr(data-name)
-      position: absolute
-      bottom: -40px
-      left: 50%
-      transform: translateX(-50%)
-      color: #5d5d5d
-      opacity: 0.5
-    &:hover
-      flex-grow: 3
-      z-index: 10
-      box-shadow: 0px 15px 15px #a0a0a0
-      transform: scale(1.02)
-    &:hover:after
-      opacity: 1
+  margin-top: 60px
+  .layout__cub__wrapper
+    display: flex
+    align-items: center
+    justify-content: center
+    perspective: 25rem
+    height: 340px
+    flex-basis: 33.33%
+    .layout__cub
+      width: $size-cub
+      height: $size-cub
+      transition: all 0.7s cubic-bezier(.59,-0.3,.31,1.43)
+      transform-style: preserve-3d
+      &:hover
+        transform: rotate3d(1, 1, 1, 120deg)
+      .front, .bottom, .left
+        position: absolute
+        width: $size-cub
+        height: $size-cub
+        background-color: #151b3d
+      .front
+        transform: translateZ($size-cub-half) rotateX(0)
+        background-size: contain
+        background-position: center
+        background-repeat: no-repeat
+      .bottom
+        transform: translateY($size-cub-half) rotateX(-90deg) rotateZ(-90deg)
+        display: flex
+        align-items: center
+        justify-content: center
+        background: radial-gradient($main-col,#000 120%)
+        .bottom__button
+          border: 1px solid #3949a3
+          padding: 5px 10px
+          border-radius: 15px
+          transition: background-color 0.4s
+          position: relative
+          &:hover
+            background-color: #00000024
+          &:after
+            content: attr(data-list) 
+            position: absolute
+            top: 45px
+            font-size: 10px
+            background-color: #0000002b
+            border-radius: 15px
+            left: 50%
+            transform: translateX(-50%)
+            overflow: hidden
+            height: 0
+            color: #2b6bb9
+            transition: all 0.4s
+          &:hover:after
+            padding: 5px 10px
+            height: auto
+          h2
+            font-size: 20px
+            background: linear-gradient(0deg, $main-col,#1ea0e9, $main-col)
+            -webkit-background-clip: text
+            -webkit-text-fill-color: transparent
+      .left  
+        background: radial-gradient($main-col -40%,#000 190%)
+        transform: translateX(-$size-cub-half) rotateY(-90deg)
 
-@media screen and (max-width: 600px)
-  body
-    align-items: flex-start
+//
+// ** media queries **
+//
+
+@media screen and (max-width: 886px)
   .layouts__wrapper
-    flex-direction: column
-    height: auto
-    .layout__link
-      height: 300px
-      margin-top: 70px
-  header
-    padding: 20px
-    border-bottom: 1px solid #8a8a8a
+    display: block
