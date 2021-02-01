@@ -1,9 +1,37 @@
 @import '_variables'
+@import '_mixins'
+
 //
 // **  Here are styles for 'main' of page **
 //  
 
-
 .content
     margin-top: 60px  
-          
+    .content_header
+        @include addGrid(100px 1fr 100px, false)
+        height: 60px
+        background-color: $sect-backgr
+        border-bottom: 1px solid #8080804d
+        .content_header_title, .content_header_types
+            @include gridChildAlign(center, center)
+        .content_header_types
+            @include addGrid(repeat(3, 100px), false)   
+            & > li
+                text-align: center  
+            .content_header_types_link
+                line-height: 60px
+                position: relative
+                display: inline-block
+                color: $sec-col
+                width: 100%
+                transition: all 0.3s
+                &.active, &:hover
+                    color: inherit
+                &.active:after
+                    content: ""
+                    position: absolute
+                    background: $main-col
+                    width: 100%
+                    height: 2px
+                    bottom: 0px
+                    left: 0    
