@@ -1,0 +1,39 @@
+@import '_fonts'
+@import '_variables'
+@import 'sidebar'
+@import 'mainContent'
+@import 'sideContent'
+
+
+
+body
+    font-family: $main-font
+    width: 100vw
+    min-height: 100vh
+    background-color: $lght-col
+    color: $drk-col
+    display: grid
+    grid-template-columns: none
+    grid-template-rows: 80px auto auto
+    grid-column-gap: 0
+    grid-row-gap: 64px
+    padding: 24px 32px
+
+
+//
+// ** media queries **
+//
+@media (min-width: 1040px)
+    ::-webkit-scrollbar
+        width: 0px
+    body
+        grid-template-columns: 132px 5fr 4fr
+        grid-template-rows: none
+        grid-column-gap: 64px
+        grid-row-gap: 0
+    .sidebar, .main__content, .side__content
+        max-height: calc(100vh - 48px)
+
+@media screen and ( max-width:  528px)
+    body 
+        padding: 5px    

@@ -2,12 +2,12 @@ const gulp = require('gulp');
 const autoprefixer = require('gulp-autoprefixer');
 const sass = require('gulp-sass');
 sass.compiler = require('node-sass');
-const cssnano = require('gulp-cssnano');
 const rename = require("gulp-rename");
 const uglify = require('gulp-uglify-es').default;
 const browserSync = require('browser-sync').create();
 const concat = require('gulp-concat');
 const del = require('del');
+const cssnano = require('gulp-cssnano');
 const paths = require('./gulpfile.config')
 const stylesPathsArr = Object.entries(paths.styles)
 
