@@ -187,6 +187,10 @@
 
 @media only screen  and (max-width : 668px)  
     .content 
+        .content_header
+            grid-template-columns: 60px 1fr
+            .content_header_title
+                display: none
         .content_banner 
             grid-template-columns: 3fr 1fr
             grid-column-gap: 20px
@@ -199,3 +203,24 @@
                 display: none
             .content_box_row_option
                 justify-self: right    
+
+@media only screen  and (max-width : 528px)   
+    .content
+        .content_block
+            margin: 30px 10px 
+        .content_header 
+            padding: 0 10px
+            .content_header_types  
+                grid-template-columns: repeat(3,80px)
+        .content_banner
+            padding: 15px 15px
+            grid-template-columns: 1fr
+            grid-column-gap: 0
+            .content_banner_r_img
+                display: none
+        .content_box .content_box_row, 
+        .content_row_plan .content_box_row
+            padding: 0 15px
+            .content_box_row_state, .content_box_row_state
+                margin-left: 20px  
+                font-size: 12px
