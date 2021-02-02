@@ -43,13 +43,15 @@ header
   display: flex
   width: 100%
   margin-top: 60px
+  flex-wrap: wrap
+  justify-content: center
   .layout__cub__wrapper
     display: flex
     align-items: center
     justify-content: center
     perspective: 25rem
     height: 340px
-    flex-basis: 33.33%
+    min-width: 300px
     .layout__cub
       width: $size-cub
       height: $size-cub
@@ -105,11 +107,3 @@ header
       .left  
         background: radial-gradient($main-col -40%,#000 190%)
         transform: translateX(-$size-cub-half) rotateY(-90deg)
-
-//
-// ** media queries **
-//
-
-@media screen and (max-width: 886px)
-  .layouts__wrapper
-    display: block
