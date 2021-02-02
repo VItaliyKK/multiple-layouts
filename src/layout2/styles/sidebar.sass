@@ -1,0 +1,104 @@
+@import '_variables'
+
+//
+// **  Here are styles for 'sidebar' section **
+//  
+
+.sidebar
+    &::-webkit-scrollbar
+        display: none
+
+    position: fixed
+    top: 0
+    left: 0
+    color: $trd-col
+    background-color: $sec-col 
+    border-top-right-radius: $brd-radius
+    border-bottom-right-radius: $brd-radius
+    transition: all 0.2s linear
+    display: grid
+    grid-template-rows: 140px auto 60px
+    overflow: hidden
+    height: 100vh
+    width: 240px
+    overflow-y: auto
+    z-index: 999
+    transition: left 0.2s linear
+
+    .sidebar__header
+        display: grid
+        grid-template-columns: 2fr 6fr 3fr 3fr
+        align-self: center
+        .sidebar__header__logo__tittle
+            grid-column-start: 2
+            grid-column-end: 4
+            align-self: center
+            img
+                width: 120px
+        .sidebar__toggle__hide
+            background-color: #9a2db6   
+            height: 60px
+            color: inherit
+            border-radius: 15px
+            border-bottom-right-radius: 0
+    .navigation__header
+        display: grid
+        grid-template-columns: 2fr 1fr 5fr 3fr 3fr
+        grid-template-rows: 40px
+    .navigation__icon
+        grid-column-start: 2
+    .navigation_row_space
+        display: grid
+        grid-template-columns: 2fr 1fr 11fr
+        grid-template-rows: 40px
+        span
+            justify-self: center
+    .nav__link
+        display: grid
+        grid-template-rows: 40px
+        grid-template-columns: 2fr 1fr 5fr 3fr 3fr
+        color: $trd-col
+        font-size: 16px
+        transition: all 0.2s linear
+        &:hover
+            background-color: $drk-sec-col
+        .nav__link__quantity
+            justify-self: end
+            margin-right: 10px
+            color:#9a2db6
+        .nav__link__mark
+            color: red
+    .sidebar__footer
+        display: grid
+        grid-template-columns: 1fr 3fr
+        background-color: $drk-sec-col
+        border-radius: 15px
+        .sidebar__footer__config
+            display: flex
+            align-items: center
+            justify-content: center
+            background-color: #d52955
+            border-radius: 15px
+            border-bottom-left-radius: 0
+        .sidebar__footer__title
+            color: $trd-col
+            font-size: 12px
+            justify-self: center
+
+//
+// ** shared classes **
+//
+
+.link__margin__left
+    margin-left: 10px            
+
+
+//
+// ** media queries **
+//
+@media screen and (max-width: 1180px)
+    .sidebar.hidden
+        left: -240px
+        .sidebar__toggle__hide
+            position: relative
+            right: 0

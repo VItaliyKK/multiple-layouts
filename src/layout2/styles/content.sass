@@ -1,0 +1,225 @@
+@import '_variables'
+
+//
+// **  Here are styles for 'sidebar' section **
+//  
+
+.main
+    display: grid
+    grid-template-rows: 140px 40px 40px 140px auto
+    min-height: 100vh
+    padding: 0 40px 0 30px
+    .main__header
+        display: grid
+        grid-template-columns: auto 40px 40px 40px
+        grid-column-gap: 10px
+        position: sticky
+        top: -40px
+        background-image: linear-gradient(0deg,transparent 0%, white 30%)
+        z-index: 99
+        .main__header__prices, .main__header__search, .main__header__notification, .main__header__profile__photo   
+            align-self: center
+            justify-self: end
+        .main__header__profile__photo img
+            width: 25px
+            border-radius: 50%
+        .main__header__prices
+            justify-self: baseline
+            display: grid
+            grid-template-columns: repeat(5, auto)
+            grid-column-gap: 15px
+            .main__header__prices_indicator
+                padding: 5px 10px
+                border-radius: 5px
+                box-shadow: 0px 6px 20px 3px #8080802e
+                font-size: 12px
+                span:first-child
+                    color: $sec-text-col
+                span:last-child
+                    font-weight: bold  
+                &.show__sidebar   
+                    display: none
+                    background-color: #9a2db6       
+    .main__overview
+        display: grid
+        grid-template-columns: 155px auto 120px 120px
+        grid-column-gap: 10px
+        font-size: 14px
+        .main__overview__title
+            font-family: $head-font
+            font-size: 32px
+            position: relative
+            top: -3px
+        .main__overview__checkbox__wrapper
+            display: flex
+            align-items: center
+            justify-content: flex-end
+            p
+                margin-right: 5px
+            .main__overview__checkbox
+                #checkboxMode, #checkboxSomo
+                    display: none
+                #checkboxSomo:checked ~ #checkboxSomo__backgr, #checkboxMode:checked ~ #checkboxMode__backgr 
+                    background-color: $sec-col
+                #checkboxSomo:checked ~ #checkboxSomo__backgr div, #checkboxMode:checked ~ #checkboxMode__backgr div
+                    left: auto
+                    right: 2px
+                #checkboxMode__backgr, #checkboxSomo__backgr
+                    display: block
+                    background-color: $trd-col
+                    width: 35px
+                    height: 20px
+                    border-radius: 10px
+                    cursor: pointer
+                    position: relative
+                    transition: all 0.1s linear
+                #checkboxMode__backgr div, #checkboxSomo__backgr div
+                    position: absolute
+                    background-color: $main-col
+                    top: 2px
+                    left: 2px
+                    height: 16px
+                    width: 16px
+                    border-radius: 50%
+    .main__progress__wrapper
+        grid-row-start: 4
+        display: grid
+        grid-template-columns: repeat(4, 1fr)
+        .main__progress
+            display: grid
+            grid-template-columns: 60px auto
+            grid-template-rows: 65px auto
+            .main__progress__icon
+                background: url(./assets/progress-icons.jpg)
+                background-size: 120px
+                background-repeat: no-repeat
+                &[data-name="pairs"]
+                    background-position: 5px 2px
+                &[data-name="dca"]
+                    background-position: -60px 0px
+                &[data-name="pending"]
+                    background-position: 1px -64px
+                &[data-name="sales"]
+                    background-position: -60px -65px            
+            .main__progress__title
+                margin-left: 20px
+                font-family: $sec-font
+                font-size: 20px
+                font-weight: bold
+            .main__progress__line
+                justify-self: center 
+            .main__progress__values p
+                color: $sec-text-col
+                margin-left: 20px
+                margin-top: 3px
+                span
+                    color: $main-text-col
+                    font-weight: bold
+    .main__info
+        grid-row-start: 5
+        display: grid
+        grid-template-columns: repeat(3,1fr)
+        grid-column-gap: 50px
+        margin-top: 30px
+        margin-bottom: 30px
+        .main__info_wrapper
+            display: grid
+            grid-template-rows: 120px 200px
+            border-radius: $brd-radius
+            box-shadow: 0 6px 40px 5px #8080802e
+            max-height: 320px
+            overflow: hidden
+            .main__info__header
+                display: grid
+                grid-template-columns: 80px auto
+                grid-column-gap: 20px
+                position: relative
+                padding: 20px
+                box-shadow: 0 6px 40px 3px #8080802e
+                border-radius: 15px
+                .main__info__values h4
+                    font-family: $sec-font
+                    margin-bottom: 3px
+                    font-size: 22px
+                .main__info__values p
+                    color: $sec-text-col    
+                .main__info__icon
+                    justify-self: baseline
+                    background-color: #d52955
+                    padding: 18px
+                    border-radius: $brd-radius
+                .main__info__option
+                    position: absolute
+                    top: 14px
+                    right: 20px
+                    font-size: 18px
+            .main__info__content
+                padding: 30px 50px
+                h4
+                    font-family: $sec-font
+                    display: inline
+                    font-size: 26px
+                .main__info__trends
+                    color: $sec-text-col
+                    margin: 10px auto 15px
+
+
+
+
+//
+// ** media queries **
+//
+
+@media screen and (max-width: 1180px)
+    .main .main__header .main__header__prices 
+        grid-template-columns: repeat(6,auto)
+        .main__header__prices_indicator.show__sidebar
+            display: block
+
+@media screen and (max-width: 1020px)    
+    .main
+        grid-template-rows: 140px 40px 40px 280px auto
+        .main__progress__wrapper
+            grid-template-columns: repeat(2,1fr)
+            grid-template-rows: repeat(2,140px)
+        .main__info
+            grid-column-gap: 30px    
+
+@media screen and (max-width: 850px)     
+    .main .main__info
+        grid-template-columns: auto
+        grid-row-gap: 50px
+
+@media screen and (max-width: 768px)
+    .main .main__header .main__header__prices
+        grid-template-columns: repeat(3,auto)
+        .main__header__prices_indicator:nth-child(3),
+        .main__header__prices_indicator:nth-child(4),
+        .main__header__prices_indicator:nth-child(5)
+            display: none           
+
+@media screen and (max-width: 600px)
+    .main 
+        grid-template-rows: 140px 80px 40px auto auto              
+        padding-right: 20px
+        padding-left: 10px
+        .main__overview
+            grid-auto-flow: column
+            grid-template-columns: 1fr 2fr
+            grid-template-rows: repeat(2, 40px)    
+        .main__progress__wrapper
+            grid-template-columns: auto
+            grid-template-rows: repeat(4,140px)
+            grid-row-gap: 40px
+            .main__progress .main__progress__title,
+            .main__progress .main__progress__values p
+                margin-left: 60px
+
+@media screen and (max-width: 400px)
+    .main .main__header .main__header__prices
+        grid-template-columns: repeat(3,auto)
+        .main__header__prices_indicator:nth-child(2)
+            display: none
+    .main__progress__title,
+    .main__progress__values p
+            margin-left: 20px!important     

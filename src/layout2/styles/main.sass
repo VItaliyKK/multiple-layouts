@@ -1,0 +1,25 @@
+@import '_fonts'
+@import '_variables'
+@import 'sidebar'
+@import 'content'
+
+body
+    font-family: $main-font
+    width: 100vw
+    min-height: 100vh
+    color: $main-text-col
+    background-color: $main-col 
+    display: grid
+    grid-template-columns: 240px auto
+
+.grid__center
+    align-self: center         
+
+
+//
+// ** media queries **
+//
+
+@media screen and (max-width: 1180px) 
+    body
+        grid-template-columns: 10px auto     
