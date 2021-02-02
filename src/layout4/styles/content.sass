@@ -6,12 +6,22 @@
 //  
 
 .content
-    margin-top: 60px  
+    margin-top: 60px 
+    height: calc(100vh - 60px)
+    overflow-y: auto
+    overflow-x: hidden 
+    transition: filter 0.3s
     .content_header
+        position: sticky
+        top: 0
         @include addGrid(100px 1fr 100px, false)
         height: 60px
         background-color: $sect-backgr
+        transition: background-color 0.3s
         border-bottom: 1px solid #8080804d
+        z-index: 998
+        #sidebar_visible
+            display: none
         .content_header_title, .content_header_types
             @include gridChildAlign(center, center)
         .content_header_types
@@ -35,3 +45,157 @@
                     height: 2px
                     bottom: 0px
                     left: 0    
+    .content_box_subtitle
+        margin-left: 30px
+        color: $sec-col
+        letter-spacing: 1px
+    .content_block
+        margin: 30px
+        overflow: hidden    
+        border-radius: $brd-radius
+    .content_banner
+        padding: 15px 40px     
+        background-image: url(./assets/content-banner.jpg)   
+        background-size: cover
+        @include addGrid(3fr 2fr, 60px 1fr 60px)
+        grid-column-gap: 60px 
+        grid-template-areas: "title img" "text img" "button img" 
+        .content_banner_title
+            grid-area: title
+            @include gridChildAlign(center, false)
+            display: flex
+            align-items: center
+            justify-content: flex-start
+            h2
+                margin-left: 20px
+                font-size: 20px
+            img
+                width: 50px
+                height: 50px    
+        .content_banner_text    
+            grid-area: text
+            width: 80%
+            font-size: 14px
+            line-height: 24px
+            font-weight: 100
+        .content_banner_button
+            grid-area: button
+            @include gridChildAlign(center, left)
+            background-color: $trd-col
+            padding: 10px 18px
+            border-radius: $brd-radius
+            color: inherit
+            font-family: inherit
+            font-weight: bold
+            letter-spacing: 1px
+            transition-duration: 0.3s
+            transition-property: background-color
+            &:hover
+                background-color: black
+        .content_banner_r_img    
+            grid-area: img
+            @include gridChildAlign(center, center)
+            max-width: 200px
+            box-shadow: 0px 4px 10px #0000007a
+    .content_box, .content_row_plan
+        @include addGrid(false, repeat(3, 60px))
+        background-color: #ffffff24
+        .content_box_row
+            @include addGrid(60px repeat(3, 1fr) 60px, false)
+            padding: 0 40px
+            transition: background-color 0.3s
+            &:hover
+                background-color: #0a0a0a26
+            &:not(:last-child)
+                border-bottom: 1px solid #8080804d
+            .content_box_row_logo
+                width: 40px
+                height: 40px
+                @include gridChildAlign(center, left)
+            .content_box_row_name
+                @include gridChildAlign(center, left)
+            .content_box_row_state
+                @include gridChildAlign(center, left)
+                user-select: none
+                margin-left: 40px
+                position: relative
+                &::before
+                    content: ""
+                    position: absolute
+                    top: 50%
+                    transform: translateY(-50%)
+                    left: -20px
+                    width: 6px
+                    height: 6px
+                    border-radius: 50%
+                    background-color: $sec-col
+                &.updated::before, &.installed::before
+                    background-color: #16fd7e
+                    box-shadow: 0px 0px 5px 2px #16fd7e
+                &.no_updated::before, &.available::before
+                    background-color: $trd-col
+                    box-shadow: 0px 0px 5px 2px $trd-col 
+                &.updated + .content_box_row_action,
+                &.installed + .content_box_row_action
+                    border: 1px solid $sec-col
+                    color: $sec-col
+                    font-weight: bold
+                    font-family: inherit 
+                    &:hover
+                        background-color: black
+                        color: $main-col
+                        border-color: black
+                &.no_updated + .content_box_row_action,
+                &.available + .content_box_row_action
+                    border: none
+                    color: $main-col
+                    background-color: $trd-col
+                    &:hover
+                        background-color: black
+                        color: $main-col
+            .content_box_row_action
+                @include gridChildAlign(center, right)
+                font-weight: bold
+                border-radius: $brd-radius
+                padding: 10px 18px
+                font-family: inherit 
+                transition: all 0.3s           
+            .content_box_row_option:hover .content_box_row_option_icon p,
+            .content_box_row_option:hover .content_box_row_option_icon path
+                fill: $main-col
+
+
+//
+// ** media queries **
+//
+
+@media only screen  and (max-width : 1040px)
+    .content .content_header
+        grid-template-columns: 60px 100px 1fr 100px
+        padding: 0 30px
+    #sidebar_visible
+        display: block!important
+        transform: rotateZ(180deg)
+        height: 59px
+        background-color: #00000030
+        &:hover
+            background-color: #00000054
+
+@media only screen  and (max-width : 848px) 
+    .content .content_banner .content_banner_text
+        width: 100%                
+
+@media only screen  and (max-width : 668px)  
+    .content 
+        .content_banner 
+            grid-template-columns: 3fr 1fr
+            grid-column-gap: 20px
+            .content_banner_r_img
+                width: 100px           
+        .content_box .content_box_row, 
+        .content_row_plan .content_box_row
+            grid-template-columns: 60px repeat(2,1fr) 30px
+            .content_box_row_action
+                display: none
+            .content_box_row_option
+                justify-self: right    

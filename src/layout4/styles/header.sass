@@ -15,6 +15,13 @@
     padding-left: 250px
     padding-right: 30px
     border-bottom: 1px solid #8080804d
+    z-index: 1000
+    .header_show_navigation_list
+        display: none
+        cursor: pointer  
+        &:hover .content_box_row_option_icon p,
+        &:hover .content_box_row_option_icon path
+            fill: $main-col
     .header_item
         @include gridChildAlign(center, center)
         &.notice
@@ -22,7 +29,7 @@
         &.notice:before
             content: attr(data-quantity)
             position: absolute
-            background: cornflowerblue
+            background: $trd-col
             width: 16px
             height: 16px
             border-radius: 50%
@@ -57,7 +64,7 @@
                 right: 10px
                 width: 6px
                 height: 6px
-                background-color: cornflowerblue
+                background-color: $trd-col
                 border-radius: 50%
     .header_search_wrapper
         background-color: #00000047 
@@ -86,3 +93,36 @@
         img
             width: 32px
             height: 32px    
+
+
+//
+// ** media queries **
+//
+
+@media only screen  and (max-width : 1224px)
+    .header .header_search_wrapper
+        grid-template-columns: 30px 150px
+
+
+@media only screen  and (max-width : 1040px)
+    .header
+        padding-left: 30px          
+
+@media only screen  and (max-width : 848px)       
+    .header
+        grid-template-columns: 50px 1fr repeat(3,50px)
+        .header_show_navigation_list
+            display: block
+            @include gridChildAlign(center, center)
+        .header_navigation
+            display: none
+        #header_toggle_navigation_list:checked + .header_navigation
+            display: block
+            position: absolute   
+            top: 60px 
+            background-color: #061e3cdb
+            display: flex
+            flex-direction: column
+            width: 100%
+            .header_navigation_link
+                width: 100%
