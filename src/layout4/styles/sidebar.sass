@@ -1,0 +1,72 @@
+@import '_variables'
+@import '_mixins'
+    
+//
+// **  Here are styles for 'sidebar' of page **
+//  
+
+
+.sidebar
+    margin-top: 60px 
+    border-right: 1px solid #8080804d
+    background-color: $sect-backgr
+    height: calc(100vh - 60px)
+    overflow-y: auto
+    transition: left 0.3s
+    z-index: 999
+    #sidebar_hidden
+        display: none
+    .sidebar_title_group
+        margin-left: 20px
+        color: $sec-col
+        line-height: 60px
+        font-weight: bold
+    .sidebar_group:last-child
+        margin-bottom: 20px
+    .sidebar_group_link
+        @include addGrid(20px 40px 1fr 40px, false)
+        color: inherit
+        height: 40px
+        transition: all 0.3s
+        & > svg
+            @include gridChildAlign(center, center)
+        & > svg
+            grid-column-start: 2
+        .sidebar_group_link_notice, & > h4    
+            @include gridChildAlign(center, left)
+        .sidebar_group_link_notice
+            display: flex
+            align-items: center
+            justify-content: center
+            background: $trd-col
+            width: 20px
+            height: 20px
+            border-radius: 50%
+            font-size: 12px
+        & > h4 
+            margin-left: 5px    
+        &:hover
+            background-color: $sect-backgr    
+
+//
+// ** media queries **
+//
+
+@media only screen  and (max-width : 1040px)
+    .sidebar
+        position: fixed
+        top: 0    
+        width: 250px
+        background-color: #364384d1
+        left: 0
+        &.hidden
+            left: -250px
+        #sidebar_hidden
+            display: block
+            position: absolute
+            right: 0px
+            top: 0px
+            background-color: #00000030
+            padding: 16px 
+            &:hover
+                background-color: #00000054

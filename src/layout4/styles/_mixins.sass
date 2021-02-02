@@ -1,0 +1,16 @@
+@mixin addGrid($gridTemplateColumns, $gridTemplateRows)		
+	display: grid
+	
+	@if $gridTemplateColumns
+		grid-template-columns: $gridTemplateColumns
+
+	@if $gridTemplateRows
+		grid-template-rows: $gridTemplateRows
+
+
+@mixin gridChildAlign($alignSelf, $justifySelf)		
+	@if $alignSelf
+		align-self: $alignSelf
+
+	@if $justifySelf
+		justify-self: $justifySelf
