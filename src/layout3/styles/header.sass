@@ -1,24 +1,9 @@
-//
+@import '_variables'
+@import '_mixins'
+
+// 
 // **  Here are styles for 'header' section **
 //  
-
-@mixin flex($alignItems, $justifyContent)		
-	display: flex
-	
-	@if $alignItems
-		align-items: $alignItems
-
-	@if $justifyContent
-		justify-content: $justifyContent	
-
-
-$main-col: #ffffff	
-$sec-col: #71d3c8	
-$trd-col: #f8f8f7
-$title-col: #000000	
-$brd-rad: 8px
-
-
 
 .header
 	@include flex(center, space-between)

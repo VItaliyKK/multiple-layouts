@@ -1,14 +1,6 @@
-//
-// ** appropriation backgroundImage for each photos of content **
-//			
-
-@each $n, $fileName in $malaysiaImgs
-	.content__photos__img:nth-child(#{$n})
-		background-image: url(./assets/#{$fileName})
-
-@each $n, $fileName in $hotelsMap
-	.content__popular__hotel:nth-child(#{$n}) .content__popular__hotel__logo
-		background-image: url(./assets/#{$fileName})	
+@import '_variables'
+@import '_mixins'
+@import '_eachs'
 
 //
 // **  Here are styles for 'main' section **
