@@ -1,0 +1,12 @@
+//
+// ** list of mixins ** 
+//
+
+@mixin flex($alignItems, $justifyContent)		
+	display: flex
+	
+	@if $alignItems
+		align-items: $alignItems
+
+	@if $justifyContent
+		justify-content: $justifyContent	
