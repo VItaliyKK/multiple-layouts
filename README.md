@@ -12,13 +12,16 @@ The following main tools were used in this project:
 
 
 ## Branches
-| Branch name          | Description                                |
-| ---------------------| ------------------------------------------ |
-| main                 | Branch for merge each layout               |
-| layout1              | Branch for first layout                    |
-| layout2              | Branch for second layout                   |
-| layout3              | Branch for third layout                    |
-| layout4              | Branch for fourth layout                   |
+| Branch name          | Description                                 |
+| ---------------------| ------------------------------------------- |
+| main                 | Branch for main page and merge each layout  |
+| layout1              | Branch with first layout                    |
+| layout2              | Branch with second layout                   |
+| layout3              | Branch with third layout                    |
+| layout4              | Branch with fourth layout                   |
+
+## Deploy
+View deploy of project - click *[here](https://vitaliykk.github.io/multiple-layouts/index.html)*
 
 ## Layouts
 ### Layout 1
